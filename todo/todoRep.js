@@ -71,7 +71,7 @@ const deleteOne = async (id) => {
 
     return result.rows[0];
 }
-
+// exporting functions..
 export default {
     create,
     findOne,
