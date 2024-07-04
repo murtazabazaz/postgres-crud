@@ -1,6 +1,6 @@
 import db from "../db/index.db.js"
 
-export const create = async ({
+const create = async ({
     title,
     status,
 }) => {
@@ -17,7 +17,7 @@ export const create = async ({
     return result.rows[0];
 }
 
-export const findOne = async (id) => {
+const findOne = async (id) => {
     const query = `
         SELECT * FROM
             todos
@@ -30,7 +30,7 @@ export const findOne = async (id) => {
     return result.rows[0];
 }
 
-export const findAll = async () => {
+const findAll = async () => {
     const query = `
         SELECT * FROM
             todos
@@ -41,7 +41,7 @@ export const findAll = async () => {
     return result.rows;
 }
 
-export const updateOne = async (id, { title, status }) => {
+const updateOne = async (id, { title, status }) => {
     const query = `
         UPDATE
             todos
@@ -58,7 +58,7 @@ export const updateOne = async (id, { title, status }) => {
     return result.rows[0];
 }
 
-export const deleteOne = async (id) => {
+const deleteOne = async (id) => {
     const query = `
         DELETE FROM
             todos
@@ -72,3 +72,10 @@ export const deleteOne = async (id) => {
     return result.rows[0];
 }
 
+export default {
+    create,
+    findOne,
+    findAll,
+    updateOne,
+    deleteOne,
+}
